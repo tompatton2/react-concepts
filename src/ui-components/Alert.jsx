@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Alert = ({ message, type, children, show }) => {
+const Alert = ({ message, type, children, show, toggleAlert }) => {
   return (
     <>
       {show && (
-        <div className={`alert alert-${type}`} role="alert">
+        <div onClick={toggleAlert} className={`alert alert-${type}`} role="alert">
           {message ? message : children}
         </div>
       )}
@@ -16,12 +16,14 @@ const Alert = ({ message, type, children, show }) => {
 Alert.propTypes = {
   type: PropTypes.string.isRequired,
   message: PropTypes.string,
-  show: PropTypes.bool
+  show: PropTypes.bool,
+  toggleAlert: PropTypes.func,
 }
 
 Alert.defaultProps = {
   message: null,
-  show: true
+  show: true,
+  toggleAlert() {}
 }
 
 export default Alert;

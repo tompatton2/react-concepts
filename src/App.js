@@ -9,26 +9,25 @@ class App extends Component {
     this.state = {
       showAlert: true
     };
+
+    this.toggleAlert = this.toggleAlert.bind(this);
+  }
+
+  toggleAlert() {
+    this.setState({
+      showAlert: !this.state.showAlert,
+    });
   }
 
   render() {
     return (
     <>
       <div className="container">
-        <Alert type="success">
-          <span>This is a small alert message</span>
-        </Alert>
-      </div>
-      <div className="container">
         <Alert
           message="Hello World"
           type="danger"
-        />
-      </div>
-      <div className="container">
-        <Alert
-          message="Hello World"
-          type="primary"
+          toggleAlert={this.toggleAlert}
+          show={this.state.showAlert}
         />
       </div>
     </>
