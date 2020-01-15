@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Alert  = ({message, type}) => {
+const Alert  = ({message, type, children}) => {
   return (
     <div class={`alert alert-${type}`} role="alert">
-      {message}
+      { message ? message : children }
     </div>
   );
 };

@@ -6,10 +6,9 @@ function App() {
   return (
   <>
     <div className="container">
-      <Alert
-        message="Hello World"
-        type="success"
-      />
+      <Alert type="success">
+        <span>This is a small alert message</span>
+      </Alert>
     </div>
     <div className="container">
       <Alert
